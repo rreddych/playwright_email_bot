@@ -2,6 +2,11 @@ from playwright.sync_api import sync_playwright
 import yagmail
 import logging
 
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(levelname)s: %(message)s'
+)
+
 def take_screenshot():
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
